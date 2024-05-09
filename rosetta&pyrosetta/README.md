@@ -7,8 +7,8 @@ rosetta+pyrosetta
 相应安装包可以见10.10.113.62服务器  /HDD/disk1/wq/soft  
 下载对应版本的whl文件，安装不易报错  
 #pyrosetta 安装  
-sudo apt install python3 python3-pip  
-pip3 install pyrosetta-2024.19+release.a34b73c-cp312-cp312-linux_x86_64.whl  
+  
+  
 
 
 安装rosetta：下载最新版rosetta，否则你可能需要python2 并且指定python is python2  
@@ -29,3 +29,7 @@ python test/run.py
 **待补全**  
 
 
+**Install**  
+**pyrosetta**  
+'sudo apt install python3 python3-pip'
+'pip3 install pyrosetta-2024.19+release.a34b73c-cp312-cp312-linux_x86_64.whl'
