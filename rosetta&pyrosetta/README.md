@@ -14,14 +14,7 @@ rosetta+pyrosetta
 安装rosetta：下载最新版rosetta，否则你可能需要python2 并且指定python is python2  
 #安装支持库  
 sudo apt install build-essential python2 python-is-python2 openmpi-bin  openmpi-common openmpi-doc libopenmpi3 libopenmpi-dev  sudo -H pip3 install SCons  
-tar -xzvf rosetta_*.tgz    
-cd rosetta_*    
-cd main/source   
-./scons.py -j mode=release bin    
-./scons.py bin mode=release extras=mpi    
-./scons.py -j mode=release cat=test   
-运行测试：  
-python test/run.py  
+
 
 **rosetta及pyrosetta教程**   
 见官方或阿坤翻译教程  
@@ -38,8 +31,16 @@ python test/run.py
 下载正确版本，最好是最新版本，避免python2 
 
 安装支持库，如果不需要可以去除python2 python-is-python2  
-`sudo apt install build-essential python2 python-is-python2 openmpi-bin  openmpi-common openmpi-doc libopenmpi3 libopenmpi-dev  `
+`sudo apt install build-essential python2 python-is-python2 openmpi-bin  openmpi-common openmpi-doc libopenmpi3 libopenmpi-dev`  
 `sudo -H pip3 install SCons`
 
+`tar -xzvf rosetta_*.tgz `     
+`cd rosetta_* `      
+`cd main/source   `  
+`./scons.py -j mode=release bin    `  
+`./scons.py bin mode=release extras=mpi   `   
+`./scons.py -j mode=release cat=test  `   
+运行测试：  
+`python test/run.py  `  
 
 
