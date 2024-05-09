@@ -31,5 +31,5 @@ python test/run.py
 
 **Install**  
 **pyrosetta**  
-`sudo apt install python3 python3-pip`
+`sudo apt install python3 python3-pip`  
 `pip3 install pyrosetta-2024.19+release.a34b73c-cp312-cp312-linux_x86_64.whl`
