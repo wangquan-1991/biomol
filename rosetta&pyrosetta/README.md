@@ -24,7 +24,7 @@ cd main/source
 python test/run.py  
 
 **rosetta及pyrosetta教程**   
-见官方或阿坤翻译教程
+见官方或阿坤翻译教程  
 **相关脚本**  
 **待补全**  
 
