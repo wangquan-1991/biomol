@@ -29,7 +29,17 @@ python test/run.py
 **待补全**  
 
 
-**Install**  
-**pyrosetta**  
+
+**pyrosetta Install**  
 `sudo apt install python3 python3-pip`  
-`pip3 install pyrosetta-2024.19+release.a34b73c-cp312-cp312-linux_x86_64.whl`
+`pip3 install pyrosetta-2024.19+release.a34b73c-cp312-cp312-linux_x86_64.whl`  
+
+**pyrosetta Install**  
+下载正确版本，最好是最新版本，避免python2 
+
+安装支持库，如果不需要可以去除python2 python-is-python2  
+`sudo apt install build-essential python2 python-is-python2 openmpi-bin  openmpi-common openmpi-doc libopenmpi3 libopenmpi-dev  `
+`sudo -H pip3 install SCons`
+
+
+
