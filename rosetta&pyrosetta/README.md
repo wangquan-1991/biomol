@@ -23,10 +23,9 @@ cd main/source
 运行测试：  
 python test/run.py  
 
-RFdiffusion/RFdiffusionAA/RFdiffusion antibody  
-https://github.com/baker-laboratory/rf_diffusion_all_atom  
-
-https://github.com/baker-laboratory/RoseTTAFold-All-Atom  
-
+--rosetta及pyrosetta教程-- 
+见官方或阿坤翻译教程
+--相关脚本--  
+--待补全--
 
 
