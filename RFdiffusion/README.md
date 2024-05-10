@@ -22,5 +22,17 @@ github：https://github.com/RosettaCommons/RFdiffusion
 wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF_structure_prediction_weights.pt
 
 安装：  
-**RFdiffusion**的默认安装存在问题，如果使用docker会正常运行，但是使用conda会导致无法正确调用cuda，conda修改安装流程可参考：  
-使用修改后的SE3nv.yml文件
+**RFdiffusion**的默认安装存在问题，如果使用docker会正常运行(见dockerfile)，但是使用conda会导致无法正确调用cuda，conda修改安装流程可参考：  
+使用修改后的SE3nv.yml文件,手动安装cuda相应模块：  
+`pip3 install --force-reinstall torch torchvision torchaudio`  
+`pip install --no-cache-dir -r requirements.txt`  
+`python setup.py install`  
+`cd ../..` # change into the root directory of the repository  
+`pip install -e . # install the rfdiffusion module from the root of the repository`  
+解压测试数据：  
+`tar -xvf examples/ppi_scaffolds_subset.tar.gz -C examples/`  
+测试：  
+`./scripts/run_inference.py 'contigmap.contigs=[150-150]' inference.output_prefix=test_outputs/test inference.num_designs=10`
+
+## 使用方法及脚本  
+
