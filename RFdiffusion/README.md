@@ -49,7 +49,11 @@ wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF
 
 
 **更多案例以及参数可以参照作者的example ：https://github.com/RosettaCommons/RFdiffusion/tree/main/examples**  
+**请注意，生成的骨架结构务必仔细检查（视觉），如果存在明显不合理或者不想要的的结构，人工删除，或者修改相应参数重新生成**  
 
+
+# proteinMPNN  
+RFdiffusion只能够生成骨架，并不会添加侧链，你可以使用rosetta或者proteinMPNN来添加侧链，作者推荐proteinMPNN，更容易生成可溶性蛋白（注意使用最新权重）  
 
 
 
