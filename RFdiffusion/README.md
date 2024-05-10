@@ -40,10 +40,11 @@ wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF
 ## 使用方法及脚本  
 
 `nohup /RFdiffusion/scripts/run_inference.py inference.output_prefix=/your/output/path/ inference.input_pdb=/your/input/pdb_path/H1__wis67_stem_0001.pdb 'contigmap.contigs=[A1-34/3/A35-51/3-5/A52-110/12/A112-207]' inference.num_designs=10 &` #A链1-34不设计，插入3个AA，A链35-51不设计，插入3-5个AA，A链52-110不设计，插入12个AA，A链112-207不设计，共设计10个骨架  
-尝试理解一下下列指令：
+尝试理解一下下列指令：  
 `nohup /mnt/wq/RFdiffusion/RFdiffusion-main/scripts/run_inference.py inference.output_prefix=/mnt/wq/flu/RFdiffusion/H1/ inference.input_pdb=/mnt/wq/flu/RFdiffusion/H1/H1__wis67_stem_0001.pdb 'contigmap.contigs=[A1-34/3/A35-51/3-5/A52-107/15-50/A111-207]' inference.num_designs=500 &`  
 
 `nohup /mnt/wq/RFdiffusion/RFdiffusion-main/scripts/run_inference.py inference.output_prefix=/mnt/wq/flu/RFdiffusion/H1/3_4_15/ inference.input_pdb=/mnt/wq/flu/RFdiffusion/H1/3_4_15/H1__wis67_stem_0001.pdb 'contigmap.contigs=[A1-34/3/A35-51/4/A52-107/15/A111-207]' inference.num_designs=500 &`  
+
 `nohup /mnt/wq/RFdiffusion/RFdiffusion-main/scripts/run_inference.py inference.output_prefix=/mnt/wq/flu/RFdiffusion/H1/3_4_25/ inference.input_pdb=/mnt/wq/flu/RFdiffusion/H1/3_4_25/H1__wis67_stem_0001.pdb 'contigmap.contigs=[A1-34/3/A35-51/4/A52-107/25/A111-207]' inference.num_designs=500 &`  
 
 
