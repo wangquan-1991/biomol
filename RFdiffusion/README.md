@@ -48,6 +48,7 @@ wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF
 `nohup /mnt/wq/RFdiffusion/RFdiffusion-main/scripts/run_inference.py inference.output_prefix=/mnt/wq/flu/RFdiffusion/H1/3_4_25/ inference.input_pdb=/mnt/wq/flu/RFdiffusion/H1/3_4_25/H1__wis67_stem_0001.pdb 'contigmap.contigs=[A1-34/3/A35-51/4/A52-107/25/A111-207]' inference.num_designs=500 &`  
 
 
+**更多案例以及参数可以参照作者的example ：https://github.com/RosettaCommons/RFdiffusion/tree/main/examples**  
 
 
 
