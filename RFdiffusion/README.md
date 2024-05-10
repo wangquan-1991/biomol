@@ -20,3 +20,7 @@ github：https://github.com/RosettaCommons/RFdiffusion
 
 # original structure prediction weights
 wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF_structure_prediction_weights.pt
+
+安装：  
+**RFdiffusion**的默认安装存在问题，如果使用docker会正常运行，但是使用conda会导致无法正确调用cuda，conda修改安装流程可参考：  
+使用修改后的SE3nv.yml文件
