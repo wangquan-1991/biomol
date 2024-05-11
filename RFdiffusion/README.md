@@ -1,4 +1,4 @@
-# RFDiffusion  
+![image](https://github.com/wangquan-1991/biomol/assets/103472012/b10b22c1-4c27-40c9-a56e-791bec0f759e)# RFDiffusion  
 
 github：https://github.com/RosettaCommons/RFdiffusion  
 
@@ -54,7 +54,7 @@ wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF
 
 # proteinMPNN  
 RFdiffusion只能够生成骨架，并不会添加侧链，你可以使用rosetta或者proteinMPNN来添加侧链，作者推荐proteinMPNN（注意使用最新权重）  
-链接：https://github.com/dauparas/ProteinMPNN  
+链接：https://github.com/dauparas/ProteinMPNN   ***可以直接在RFdiffusion环境下调用***  
 
 demo：
 `#!/bin/bash
@@ -80,7 +80,7 @@ path_for_assigned_chains=$output_dir"/assigned_pdbs.jsonl"
 path_for_fixed_positions=$output_dir"/fixed_pdbs.jsonl"
 chains_to_design="A C"
 #The first amino acid in the chain corresponds to 1 and not PDB residues index for now.
-design_only_positions="1 2 3 4 5 6 7 8 9 10, 3 4 5 6 7 8" #design only these residues; use flag --specify_non_fixed
+design_only_positions="1 2 3 4 5 6 7 8 9 10, 3 4 5 6 7 8" #design only these residues; use flag --specify_non_fixed  #指定设计残基，也可以指定不设计残基
 
 python ../helper_scripts/parse_multiple_chains.py --input_path=$folder_with_pdbs --output_path=$path_for_parsed_chains 
 
@@ -98,6 +98,44 @@ python ../protein_mpnn_run.py \
         --seed 37 \
         --batch_size 1
 `
+
+
+# 使用RFdiffusion+ProteinMPNN+Fastrelax进行蛋白设计  
+***实际的药物设计需要多个流程模块结合到一起***  
+参考：https://github.com/nrbennet/dl_binder_design  
+
+参考流程：  
+结晶蛋白/建模 → 前处理，relax等能量最小化 → 确认设计目的以及区域，hotspot等 → 设计（长度，二级结构偏好） → score，视觉检查，筛选 → ProteinMPNN设计序列（偏好性） → AF2预测结构，PLDDT以及pAE计算（例如plddt>90, PAE<10），或者ESMfold等 → 视觉检查，筛选  →  ...  
+
+参考链接：https://github.com/nrbennet/dl_binder_design  
+
+## Install  
+***使用AF2预测结构效果会更好，但是计算成本会更高，所以使用阉割版的AF2initial，或者ESMfold，但是ESMfold需要先用WT测试一下***  
+1. 第三方库，例如AF2及ESMfold等
+2. pyrosetta, 按照相应流程安装
+3. 安装模块
+`git clone https://github.com/nrbennet/dl_binder_design.git`  
+`cd include/`  
+`conda env create -f proteinmpnn_fastrelax.yml`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
