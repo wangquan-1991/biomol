@@ -1,4 +1,4 @@
-![image](https://github.com/wangquan-1991/biomol/assets/103472012/b10b22c1-4c27-40c9-a56e-791bec0f759e)# RFDiffusion  
+(https://github.com/wangquan-1991/biomol/assets/103472012/b10b22c1-4c27-40c9-a56e-791bec0f759e)# RFDiffusion  
 
 github：https://github.com/RosettaCommons/RFdiffusion  
 
