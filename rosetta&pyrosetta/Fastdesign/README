@@ -12,3 +12,11 @@ resfile语法：https://www.rosettacommons.org/docs/latest/rosetta_basics/file_t
 ***如果可以的话，尽量对你的蛋白体系使用relax进行能量最小化*** 
 `relax.mpi.linuxgccrelease -s your.pdb -relax:constrain_relax_to_start_coords -auto_setup_metals -relax:coord_constrain_sidechains -overwrite -relax:ramp_constraints false -beta_nov16`  
 
+之后可以使用 fastdesign_repack10A_renew.py脚本进行简单蛋白设计，将脚本与你的蛋白放入到同一文件夹内
+***关键参数***
+`pose = pose_from_pdb("1aj7_clean_0001.pdb") #输入你的初始PDB文件，最好是经过relax优化之后的文件`  
+`input_res = "45H,46L,47H,48L" #s输入你希望设计残基编号以及所属链号，多个残基使用逗号分割`  
+`nbr_repack_selector = NeighborhoodResidueSelector(range_selector, 10.0, False)  # 限制范围10A，False 代表不包括核心的氨基酸，`  
+`aa_to_design.aas_to_keep("ADEFGHIKLMNPQRSTVWY") #设置允许的突变类型，尽量不要引入CYS`
+`circle = 5  #正式运行前，请先预计算单次循环所需时间与资源,循环越多，取样约完整，但是循环太多会出现重复结果`  
+最终的输出文件可以与WT计算ddgG，详情可见flexddg文件夹
