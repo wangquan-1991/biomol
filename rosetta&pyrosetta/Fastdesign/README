@@ -1,3 +1,14 @@
 # Fastdesign  
 Fastdesign是Rosetta/pyrosetta的里面的最新的多肽/蛋白设计模块
-可以指定多个残基的多种突变类型，最终生成可能符合要求的组合突变类型，并可以使用ddG进行排序打分
+可以指定多个残基的多种突变类型，最终生成可能符合要求的组合突变类型，并可以使用ddG进行排序打分  
+
+rosetta设计的主要思路：早期的Rosetta的设计更多是分层级设计，需要了解不同的层级，以及不同的操：  
+例如，我有一个蛋白质，我希望对61-70位置残基进行设计，那么我么可以指定61-70位置的残基为可设计区域A，A区域既会进行骨架扰动，relax等能量最小化操作，同时还可以进行残基类型的设计以及打分优化  
+为了计算准确，我将区域A附近10埃以内的残基定义为可扰动残基（区域B），这部分残基可以发生骨架或者侧链扰动，但是他们的残基类型不会发生变化-提高准确度  
+其他区域的残基我们可以将其定义为不可设计残基（区域C），这部分残基既不会发生扰动，也不会发生突变--缩小计算量，保证保守区域  
+***此外 你也可以直接通过resfile或者mutfile对突变进行控制，简单易用***  
+resfile语法：https://www.rosettacommons.org/docs/latest/rosetta_basics/file_types/resfiles  
+使用方法：
+***如果可以的话，尽量对你的蛋白体系使用relax进行能量最小化*** 
+`relax.mpi.linuxgccrelease -s your.pdb -relax:constrain_relax_to_start_coords -auto_setup_metals -relax:coord_constrain_sidechains -overwrite -relax:ramp_constraints false -beta_nov16`  
+
