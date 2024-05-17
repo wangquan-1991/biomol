@@ -1,0 +1,4 @@
+# FlexddG
+非常推荐阅读知乎的文章：https://zhuanlan.zhihu.com/p/73582534 ，尤其是对于resfile的介绍  
+原始代码：github: https://github.com/Kortemme-Lab/flex_ddG_tutorial  
+本质是通过多轮扰动计算平均值，有现成的代码也有脚本，建议还是先通读文献了解原理，也可以直接使用提供的脚本
