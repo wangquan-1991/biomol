@@ -35,4 +35,4 @@ wget https://storage.googleapis.com/alphafold/alphafold_params_2022-12-06.tar
 tar --extract --verbose --file=alphafold_params_2022-12-06.tar
 ```
 补充其他模块：
-
+Downgraded to biopython==1.81 from biopython==18.3 and this resolved the issue and resulted in Found a GPU! This environment passes all import tests. `'Bio.Data.SCOPData' module was be deprecated in 1.83
