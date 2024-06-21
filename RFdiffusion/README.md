@@ -22,7 +22,10 @@ original structure prediction weights
 wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF_structure_prediction_weights.pt
 
 安装：  
-**RFdiffusion**的默认安装存在问题，如果使用docker会正常运行(见dockerfile)，但是使用conda会导致无法正确调用cuda，conda修改安装流程可参考：  
+**RFdiffusion**的默认安装存在问题，如果使用docker会正常运行(见dockerfile)，但是使用conda会导致无法正确调用cuda，conda修改安装流程可参考：  猜测是安装的时候pytorch支持的是cpu，重新卸载，然后安装：
+conda uninstall pytorch torchvision torchaudio
+conda install -c pytorch pytorch=1.9
+
 使用修改后的SE3nv.yml文件,手动安装cuda相应模块：  
 `conda env create -f env/SE3nv.yml`  
 `conda activate SE3nv`  
@@ -36,7 +39,7 @@ wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF
 `tar -xvf examples/ppi_scaffolds_subset.tar.gz -C examples/`  
 测试：  
 `./scripts/run_inference.py 'contigmap.contigs=[150-150]' inference.output_prefix=test_outputs/test inference.num_designs=10`
-
+# numpy可能出现报错，建议使用numpy=1.26.4版本
 ## 使用方法及脚本  
 
 `nohup /RFdiffusion/scripts/run_inference.py inference.output_prefix=/your/output/path/ inference.input_pdb=/your/input/pdb_path/H1__wis67_stem_0001.pdb 'contigmap.contigs=[A1-34/3/A35-51/3-5/A52-110/12/A112-207]' inference.num_designs=10 &` #A链1-34不设计，插入3个AA，A链35-51不设计，插入3-5个AA，A链52-110不设计，插入12个AA，A链112-207不设计，共设计10个骨架  
