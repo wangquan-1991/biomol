@@ -6,3 +6,33 @@ pyrosetta两个环境都需要，建议单独安装
 `dl_binder_design/include`  
 将yml内的pyrosetta删除，手动安装
 `conda env create -f proteinmpnn_fastrelax.yml`
+## 安装pyrosetta:  
+`conda activate proteinmpnn_binder_design`
+`pip install pyrosetta-2023.42+release.0bdadc1-cp311-cp311-linux_x86_64.whl`  
+测试环境，在include文件夹内运行:
+`python importtests/proteinmpnn_importtest.py`
+输出：GPU access is available
+This environment passes all import tests  
+## 安装AF2环境
+include文件夹内运行：
+`conda env create -f af2_binder_design.yml`
+·conda activate af2_binder_design·
+安装pyrosetta：
+`pip install pyrosetta-2023.42+release.0bdadc1-cp311-cp311-linux_x86_64.whl` 
+
+下载proteinMPNN代码：
+在dl_binder_design/mpnn_fr文件夹内：
+`git clone https://github.com/dauparas/ProteinMPNN.git`  
+
+安装slinet处理文件：
+见https://github.com/bcov77/silent_tools
+
+下载AF2权重文件：
+```
+cd <base_dir>/af2_initial_guess
+mkdir -p model_weights/params && cd model_weights/params
+wget https://storage.googleapis.com/alphafold/alphafold_params_2022-12-06.tar
+tar --extract --verbose --file=alphafold_params_2022-12-06.tar
+```
+补充其他模块：
+
