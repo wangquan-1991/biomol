@@ -30,7 +30,7 @@ conda install -c pytorch pytorch=1.9
 `conda env create -f env/SE3nv.yml`  
 `conda activate SE3nv`  
 `cd env/SE3Transformer`  
-`pip3 install --force-reinstall torch torchvision torchaudio`  
+`pip3 install --force-reinstall torch torchvision torchaudio`  #本质还是重新安装支持GPU的pytorch，你可以使用conda list指令看一下pytorch是支持cuda还是cpu（第三列）  
 `pip install --no-cache-dir -r requirements.txt`  
 `python setup.py install`  
 `cd ../..` # change into the root directory of the repository  
