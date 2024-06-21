@@ -1,4 +1,4 @@
-#结合relax+MPNN+AF2 initial 对RFdiffusion设计的骨架进行序列设计，结构预测，以及筛选  
+# 结合relax+MPNN+AF2 initial 对RFdiffusion设计的骨架进行序列设计，结构预测，以及筛选  
 由于AF3优化了MSA的检索，更加快速，之后开源后可以考虑  
 为了提高成功率，relax+MPNN单独构建一个环境，AF2打分单独构建一个环境  
 pyrosetta两个环境都需要，建议单独安装  
