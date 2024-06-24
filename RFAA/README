@@ -1,1 +1,4 @@
 conda env create -f diffusion.yml
+# rf_diffusion_all_atom安装
+
+#RRoseTTAFold All-Atom 安装
