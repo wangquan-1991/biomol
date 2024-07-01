@@ -39,7 +39,7 @@ conda install -c pytorch pytorch=1.9
 `tar -xvf examples/ppi_scaffolds_subset.tar.gz -C examples/`  
 测试：  
 `./scripts/run_inference.py 'contigmap.contigs=[150-150]' inference.output_prefix=test_outputs/test inference.num_designs=10`
-# numpy可能出现报错，建议使用numpy=1.26.4版本
+## numpy可能出现报错，建议使用numpy=1.26.4版本
 ## 使用方法及脚本  
 
 `nohup /RFdiffusion/scripts/run_inference.py inference.output_prefix=/your/output/path/ inference.input_pdb=/your/input/pdb_path/H1__wis67_stem_0001.pdb 'contigmap.contigs=[A1-34/3/A35-51/3-5/A52-110/12/A112-207]' inference.num_designs=10 &` #A链1-34不设计，插入3个AA，A链35-51不设计，插入3-5个AA，A链52-110不设计，插入12个AA，A链112-207不设计，共设计10个骨架  
