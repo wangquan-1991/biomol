@@ -24,7 +24,8 @@ wget http://files.ipd.uw.edu/pub/RFdiffusion/1befcb9b28e2f778f53d47f18b7597fa/RF
 安装：  
 **RFdiffusion**的默认安装存在问题，如果使用docker会正常运行(见dockerfile)，但是使用conda会导致无法正确调用cuda，conda修改安装流程可参考：  猜测是安装的时候pytorch支持的是cpu，重新卸载，然后安装：
 conda uninstall pytorch torchvision torchaudio
-conda install -c pytorch pytorch=1.9
+conda install -c pytorch pytorch=1.9  
+测试：python -c 'import torch; print(torch.cuda.is_available())'
 
 使用修改后的SE3nv.yml文件,手动安装cuda相应模块：  
 `conda env create -f env/SE3nv.yml`  
