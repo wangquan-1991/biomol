@@ -37,4 +37,6 @@ tar --extract --verbose --file=alphafold_params_2022-12-06.tar
 补充其他模块：
 Downgraded to biopython==1.81 from biopython==18.3 and this resolved the issue and resulted in Found a GPU! This environment passes all import tests. `'Bio.Data.SCOPData' module was be deprecated in 1.83
 `conda install biopython=1.81
+#numpy版本为2.0可能报错，可尝试：  
+conda install numpy=1.26.4
 `
