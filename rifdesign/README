@@ -1,2 +1,20 @@
 # rifdesign结合RFdiffusion  
+虽然RFdiffusion等方法已经提供了一种通用的小蛋白的binder设计流程，但是当关键scaffold为loop等柔性较大区域时，这种方法可能还需要改善
+我们可以尝试基于rifdock生成更多的hotspot，之后再基于RFdiffusion的流程进行设计
 
+rifdock环境：
+rifdock需要旧版本的rosetta，可使用rosetta_src_3.9_bundle 
+测试安装：
+使用caolongxing文章版本：rosetta_bin_linux_2020.03.61102_bundle.tgz
+
+# Create a conda environment named "rosetta_env" with Python 2.7
+conda create -n rifdock python=2.7
+
+# Activate the environment
+conda activate rifdock
+
+tar -xzvf rosetta_*.tgz
+
+cd rosetta_* 
+cd main/source
+./scons.py -j<number_of_processors_to_use> mode=release bin 
