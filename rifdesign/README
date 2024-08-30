@@ -6,10 +6,12 @@ rifdock环境：
 rifdock需要旧版本的rosetta，
 使用rosetta_src_3.9_bundle，+ubuntu18
 singularity pull ubuntu_18.04.sif docker://ubuntu:18.04
-tar -xzvf rosetta_*.tgz 
+ 
 singularity build --sandbox ubuntu_18.04_sandbox ubuntu_18.04.sif
 
 singularity shell --writable --fakeroot ubuntu_18.04_sandbox
+将所有文件复制到ubuntu_18.04_sandbox文件夹内
+tar -xzvf rosetta_*.tgz
 apt-get update
 apt-get install -y software-properties-common gcc-6 g++-6 cmake ninja-build
 apt-get install -y python2.7
@@ -25,9 +27,17 @@ cd your/real/path/rosetta_src_2018.09.60072_bundle/main/source
 cd rifdock
 mkdir build
 cd build
+CC=gcc-6 CXX=g++-6 export CC CXX
 
 CXXFLAGS="-isystem /root/SYSX0003/wq/soft/docker/boost_1_65_0" CMAKE_ROSETTA_PATH=/root/SYSX0003/wq/soft/docker/rosetta_src_2018.09.60072_bundle/main CMAKE_FINAL_ROSETTA_PATH=/root/SYSX0003/wq/soft/docker/rosetta_src_2018.09.60072_bundle/main/source/cmake/build_cxx11_omp cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_PREFIX_PATH=/root/SYSX0003/wq/soft/docker/boost_1_65_0/stage/lib
 
 make -j20 rif_dock_test rifgen
+
+测试：
+rifdock/build/apps/rosetta/rifgen  -- help
+rifdock/build/apps/rosetta/rif_dock_test  --help
+
+exit
+singularity build --fakeroot rifdock.sif ubuntu_18.04_sandbox
 
 后续制作docker 一劳永逸。。
