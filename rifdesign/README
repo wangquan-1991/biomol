@@ -39,6 +39,11 @@ rifdock/build/apps/rosetta/rif_dock_test  --help
 
 exit
 singularity build --fakeroot rifdock.sif ubuntu_18.04_sandbox
+#有时会出现共享库确实报错，重新指定即可：
+echo 'export LD_LIBRARY_PATH=/opt/wq/rifdock/build/lib:/opt/wq/rosetta_src_2018.09.60072_bundle/main/source/cmake/build_cxx11_omp:$LD_LIBRARY_PATH' >> ~/.bashrc
+source ~/.bashrc
+
+
 
 后续制作docker 一劳永逸。。
 docker pull registry.cn-zhongwei.paracloud.com/clickmab/clx_binder@sha256:a92fb6d0050dbc5a6efa291a71a5e241ee0b18ca4253dca43761193fcbf4a634
