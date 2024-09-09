@@ -46,6 +46,5 @@ source ~/.bashrc
 
 
 后续制作docker 一劳永逸。。
-docker pull registry.cn-zhongwei.paracloud.com/clickmab/clx_binder@sha256:a92fb6d0050dbc5a6efa291a71a5e241ee0b18ca4253dca43761193fcbf4a634
-
+镜像软件路径：/home/ai/software
 
